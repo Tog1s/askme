@@ -16,5 +16,8 @@
  *= require button
  *= require form
  *= require users
+ *= require layout
+ *= require questions
+ *= require sessions
  *= require_self
  */

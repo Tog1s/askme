@@ -5,7 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby 2.5.3p105 (2018-10-18 revision 65156)
+
+* Rails 5.2.2
 
 * System dependencies
 
@@ -21,4 +23,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...

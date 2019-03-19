@@ -14,5 +14,7 @@
  *= require text
  *= require grid
  *= require button
+ *= require form
+ *= require users
  *= require_self
  */

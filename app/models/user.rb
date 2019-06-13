@@ -11,11 +11,19 @@ class User < ApplicationRecord
   validates :username, presence: true,  length: {maximum: 40}, format: {with: /\A[a-zA-Z0-9_]+\z/}
   validates_uniqueness_of :username, :case_sensitive => false
   
+  before_validation :downcase_username
+  
   attr_accessor :password
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
   before_save :encrypt_password
 
+  def downcase_username
+    if username.present?
+      self.username = username.downcase
+    end
+  end
+  
   def encrypt_password
     if self.password.present?
       self.password_salt = User.hash_to_string(OpenSSL::Random.random_bytes(16))

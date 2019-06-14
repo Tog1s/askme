@@ -7,6 +7,8 @@ gem 'rails', '~> 5.2.2'
 
 gem 'puma', '~> 3.11'
 
+gem 'uglifier'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

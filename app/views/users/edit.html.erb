@@ -44,7 +44,7 @@
       </div>
 
       <div class="buffer-top-large buffer-bottom">
-        Если не хотите менять пароль — оставьте эти поля пустыми!
+        <p>Если не хотите менять пароль — оставьте эти поля пустыми!</p>
       </div>
 
       <div class="form-field">
@@ -61,6 +61,12 @@
         <%= f.submit 'Сохранить', class: 'button button-dark button-small' %>
       </div>
     <% end %>
+    
+    <div class="buffer-top">
+      <p>Внимание! Профиль удаляется навсегда</p>
+      <%= link_to 'Удалить профиль', user_path(@user), class: 'button button-small button-red',
+        method: :delete, data: {confirm: 'Вы действительно хотите удалить профиль?'} if current_user == @user %>
+    </div>
 
     <%# Подробнее про помощники для создания форм: %>
     <%# http://guides.rubyonrails.org/form_helpers.html %>

@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: {with: /\A.+@.+\..+\z/}
   validates :username, presence: true,  length: {maximum: 40}, format: {with: /\A[a-zA-Z0-9_]+\z/}
-  validates :profile_color, length: {maximum: 6}, format: {with: /\A[a-fA-F0-9]+\z/}
+  validates :profile_color, length: {maximum: 6}, format: {with: /\A[a-fA-F0-9]+\z/}, on: :update, allow_blank: true
   validates_uniqueness_of :username, :case_sensitive => false
   
   before_validation :downcase_username
@@ -18,6 +18,7 @@ class User < ApplicationRecord
   validates_presence_of :password, on: :create
   validates_confirmation_of :password
   before_save :encrypt_password
+  before_save :set_profile_color
 
   def downcase_username
     if username.present?
@@ -32,6 +33,10 @@ class User < ApplicationRecord
         OpenSSL::PKCS5.pbkdf2_hmac(self.password, self.password_salt, ITERATIONS, DIGEST.length, DIGEST)
       )
     end
+  end
+  
+  def set_profile_color
+    self.profile_color ||= '#005a55'
   end
 
   def self.hash_to_string(password_hash)

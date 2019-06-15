@@ -6,6 +6,7 @@ class User < ApplicationRecord
   DIGEST = OpenSSL::Digest::SHA256.new
 
   has_many :questions
+  has_many :authorized_questions, class_name: 'Question', foreign_key: :author_id, dependent: :nullify
 
   validates :email, presence: true, uniqueness: true, format: {with: /\A.+@.+\..+\z/}
   validates :username, presence: true,  length: {maximum: 40}, format: {with: /\A[a-zA-Z0-9_]+\z/}

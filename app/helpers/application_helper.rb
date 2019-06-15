@@ -14,6 +14,14 @@ module ApplicationHelper
       return '#005a55'
     end
   end
+  
+  def author(question)
+    if question.author.present?
+      link_to question.author.username, user_path(question.author)
+    else
+      return 'Анонимный пользователь'
+    end
+  end
 
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"

@@ -6,6 +6,14 @@ module ApplicationHelper
       asset_path 'avatar.jpg'
     end
   end
+  
+  def profile_color(user)
+    if user.profile_color.present?
+      user.profile_color
+    else
+      return '#005a55'
+    end
+  end
 
   def fa_icon(icon_class)
     content_tag 'span', '', class: "fa fa-#{icon_class}"

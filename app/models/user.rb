@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true, format: {with: /\A.+@.+\..+\z/}
   validates :username, presence: true,  length: {maximum: 40}, format: {with: /\A[a-zA-Z0-9_]+\z/}
+  validates :profile_color, length: {maximum: 6}, format: {with: /\A[a-fA-F0-9]+\z/}
   validates_uniqueness_of :username, :case_sensitive => false
   
   before_validation :downcase_username

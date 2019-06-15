@@ -1,4 +1,4 @@
-<div class="user-header text-center">
+<div class="user-header text-center" style="background: #<%= profile_color(@user) %>">
   <h1 class="title-medium">
     <%= @user.name %>
   </h1>
@@ -8,7 +8,6 @@
   </div>
 
   <div class="user-image-div">
-
     <%= image_tag user_avatar(@user), class: 'user-image', alt: '[Фото]' %>
   </div>
 
@@ -34,7 +33,6 @@
       <p><%= sklonenie(@answers_count, 'без ответа', 'без ответа', 'без ответов') %></p>
     </div>
   </div>
-  
 </div>
 
 <div class="user-question-form-div column-1-4 column-1-4-right" id='ask-form'>

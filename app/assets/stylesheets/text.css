@@ -7,6 +7,14 @@ a {
   text-decoration: none;
 }
 
+.hashtag {
+  margin: 0px 6px 0px 6px;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
 .title-large {
   font-size: 42px;
   margin-bottom: 18px;

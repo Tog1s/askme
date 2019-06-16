@@ -13,8 +13,8 @@
     <h3>Хэштеги</h3>
     <% @hashtags.each do |hashtag| %>
       <% if hashtag.questions.present? %>
-        <span class="hashtag-link">
-          <%= link_to hashtag.name, hashtag_url(hashtag) %>
+        <span>
+          <%= link_to hashtag.name, hashtag_url(hashtag), class: 'hashtag' %>
         </span>
       <% end %>
     <% end %>

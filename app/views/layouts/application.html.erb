@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Askme</title>
+    <title>AskMe</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -20,7 +20,7 @@
         <% if current_user %>
           <%# Даем ссылки на его профиль и на логаут %>
           <%= link_to "@#{current_user.username}", user_path(current_user) %> |
-          <%= link_to 'Выйти', log_out_path %>
+          <%= link_to 'Выйти', session_path, data: {method: :delete} %>
         <% else %>
           <%# Если нету — ссылки на регистрацию и логин %>
           <%= link_to 'Зарегистрироваться', sign_up_path, class: 'button button-light button-small' %>

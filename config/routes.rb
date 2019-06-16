@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   # Ресурс вопросов (кроме экшенов :show, :new, :index)
   resources :questions, except: [:show, :new, :index]
+  
+  resources :hashtags, only: [:show]
 
   get 'sign_up' => 'users#new'
   get 'log_out' => 'sessions#destroy'

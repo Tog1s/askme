@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-
   before_action :authorize_user, except: [:create]
 
   # GET /questions/1/edit
@@ -12,8 +11,8 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     @question.author = current_user
 
-    if @question.save
-      redirect_to user_path(@question.user), notice: 'Question was successfully created.'
+    if check_captcha(@question) && @question.save
+      redirect_to user_path(@question.user), notice: 'Вопрос задан'
     else
       render :edit
     end
@@ -37,9 +36,9 @@ class QuestionsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
   def authorize_user
     reject_user unless @question.user == current_user
@@ -53,5 +52,9 @@ class QuestionsController < ApplicationController
     else
       params.require(:question).permit(:user_id, :text)
     end
+  end
+  
+  def check_captcha(model)
+    current_user.present? || verify_recaptcha(model: model)
   end
 end

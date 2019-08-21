@@ -10,6 +10,8 @@ gem 'puma', '~> 3.11'
 gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'
 
+gem "nokogiri", ">= 1.10.4"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

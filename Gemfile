@@ -5,7 +5,7 @@ ruby '2.5.3'
 
 gem 'rails', '~> 5.2.2'
 
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 
 gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'

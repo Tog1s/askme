@@ -13,10 +13,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= require main
+//= require jscolor
 
-$(function(){
-    $('#ask-button').click(function(){
-        $('#ask-form').slideToggle(300);
-        return false;
-    })
-});
+

@@ -147,7 +147,7 @@ DEPENDENCIES
   nokogiri (>= 1.10.8)
   pg (~> 0.21)
   puma (~> 3.12)
-  rails (~> 5.2.2)
+  rails (~> 5.2.4.1)
   recaptcha
   sqlite3 (< 1.4)
   uglifier

@@ -35,7 +35,8 @@ class QuestionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
+  # Use callbacks to share common setup or constraints between actions.
   def set_question
     @question = Question.find(params[:id])
   end
@@ -44,7 +45,7 @@ class QuestionsController < ApplicationController
     reject_user unless @question.user == current_user
   end
 
-    # Only allow a trusted parameter "white list" through.
+  # Only allow a trusted parameter "white list" through.
   def question_params
     if current_user.present? &&
       params[:question][:user_id].to_i == current_user.id
@@ -53,7 +54,7 @@ class QuestionsController < ApplicationController
       params.require(:question).permit(:user_id, :text)
     end
   end
-  
+
   def check_captcha(model)
     current_user.present? || verify_recaptcha(model: model)
   end

@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.5'
-gem 'rails', '~> 5.2.4.2'
+gem 'rails', '~> 5.2.4.3'
 
-gem 'puma', '~> 3.12.4'
+gem 'puma', '~> 4.3.5'
 gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem "nokogiri", ">= 1.10.8"

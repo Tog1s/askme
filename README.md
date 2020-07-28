@@ -2,9 +2,9 @@
 
 AskMe.
 
-* Ruby 2.5.5
+* Ruby 2.5.8
 
-* Rails 5.2.4.2
+* Rails 5.2.4.3
 
 * Database creation
 ```bash

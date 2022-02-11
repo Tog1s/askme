@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.8'
 gem 'rails', '~> 5.2.4.3'
 
-gem 'puma', '~> 4.3.8'
+gem 'puma', '~> 4.3.11'
 gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem "nokogiri", ">= 1.10.8"

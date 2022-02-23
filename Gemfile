@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.8'
-gem 'rails', '~> 5.2.4.3'
+ruby '2.6.8'
+gem 'rails', '~> 5.2.6.2'
 
-gem 'puma', '~> 4.3.8'
+gem 'puma', '~> 5.6.2'
 gem 'uglifier'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem "nokogiri", ">= 1.10.8"

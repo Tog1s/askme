@@ -78,7 +78,7 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (0.21.0)
-    puma (5.6.2)
+    puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.3)
@@ -147,7 +147,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   nokogiri (>= 1.10.8)
   pg (~> 0.21)
-  puma (~> 5.6.2)
+  puma (~> 5.6.4)
   rails (~> 5.2.6.2)
   recaptcha
   sqlite3 (< 1.4)
